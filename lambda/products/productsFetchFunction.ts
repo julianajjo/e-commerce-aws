@@ -6,6 +6,7 @@ export async function handler(event: APIGatewayProxyEvent,
    const lambdaRequestId = context.awsRequestId
    const apiRequestId = event.requestContext.requestId
 
+   //O console.log abaixo irá aparecer lá no Cloudwatch
    console.log(`API Gateway RequestId: ${apiRequestId} - Lambda RequestId: ${lambdaRequestId}`)
    
    const method = event.httpMethod
