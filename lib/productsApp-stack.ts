@@ -40,7 +40,7 @@ export class ProductsAppStack extends cdk.Stack {
       const productsLayer = lambda.LayerVersion.fromLayerVersionArn(this, "ProductsLayerVersionArn", productsLayerArn)
       
       //criando a lambda através do atributo de classe. 
-      //usa o thi pra pegar as propriedades na qual a função está inserida
+      //usa o this pra pegar as propriedades na qual a função está inserida
       this.productsFetchHandler = new lambdaNodeJS.NodejsFunction(this, 
          "ProductsFetchFunction", {
             functionName: "ProductsFetchFunction", //é o nome que vai aparecer no console aws
