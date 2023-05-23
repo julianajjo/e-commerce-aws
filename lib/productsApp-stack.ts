@@ -56,7 +56,8 @@ export class ProductsAppStack extends cdk.Stack {
                PRODUCTS_DDB: this.productsDdb.tableName
             }, 
             layers: [productsLayer],
-            tracing: lambda.Tracing.ACTIVE
+            tracing: lambda.Tracing.ACTIVE,
+            insightsVersion: lambda.LambdaInsightsVersion.VERSION_1_0_119_0
          })
       //Abaixo, a permissão para que a função acesse a tabela 
       this.productsDdb.grantReadData(this.productsFetchHandler)
@@ -76,7 +77,8 @@ export class ProductsAppStack extends cdk.Stack {
                PRODUCTS_DDB: this.productsDdb.tableName
             },
             layers: [productsLayer],
-            tracing: lambda.Tracing.ACTIVE
+            tracing: lambda.Tracing.ACTIVE,
+            insightsVersion: lambda.LambdaInsightsVersion.VERSION_1_0_119_0
          }) 
       this.productsDdb.grantWriteData(this.productsAdminHandler)
    }
